@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT UI</title>
+
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <style>
+        @font-face {
+            font-family: Dosis;
+            src: url(fonts/Dosis-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: DosisBold;
+            src: url(fonts/Dosis-ExtraBold.ttf);
+            font-weight: bold;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            font-family: Dosis;
+        }
+
+        body,
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        #gauche {
+            background-color: #2C3639;
+            color: #ffffff;
+            width: 50%;
+        }
+
+        #editor {
+            margin: 0;
+            font-size: 20pt;
+            width: 100%;
+            height: 100%;
+        }
+
+        #droite {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        #cadre {
+            border: 5px solid #2C3639;
+            width: 340px;
+            height: 80%;
+            border-radius: 40px;
+            background-color: #eff6ff;
+            box-shadow: 3px 3px 5px #2c36398e, -3px 0 3px #2c36398e;
+        }
+
+        #cadre .top {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px 10px;
+            font-weight: bold;
+        }
+
+        #cadre .top div {
+            margin-top: 10px;
+            font-family: DosisBold;
+            width: 33%;
+        }
+
+        #cadre .top .milieu {
+            background-color: #2C3639;
+            height: 20px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            margin-top: 0;
+            width: 53%;
+        }
+
+        #cadre .top .right {
+            display: flex;
+            justify-content: end;
+        }
+
+        #cadre .top .right svg,
+        #cadre .top .right img {
+            height: 20px;
+            margin-left: 5px;
+        }
+
+
+        #cadre .titre {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 8pt;
+        }
+
+        #cadre .corps {
+            margin: 50px 25px;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #cadre .corps .widget {
+            width: 45%;
+        }
+
+        #cadre .corps .widget .wrapper {
+            height: 0;
+            padding: 20px 15px 100% 15px;
+            background-color: #fff;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: rgb(158, 158, 158);
+            cursor: pointer;
+        }
+
+        #cadre .corps .widget .wrapper.active {
+            box-shadow: 3px 5px 8px #a0a5a78e, -3px 0 8px #a0a5a78e;
+            color: #2C3639;
+        }
+
+        #cadre .corps .widget .wrapper.active i {
+            color: #0997c2;
+        }
+
+        .tar {
+            text-align: right;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .col {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .g {
+            font-family: DosisBold;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gauche">
+        <div id="editor"><!--
+-->{
+    "fond": "#f7f7f7",
+    "titre": "Accueil"
+}<!--
+    --></div>
+    </div>
+    <div id="droite">
+        <div id="cadre">
+            <div class="top">
+                <div>9:41</div>
+                <div class="milieu"></div>
+                <div class="right tar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                    </svg>
+                    <img src="img/bat.png" alt="icone batterie">
+                </div>
+            </div>
+            <div class="titre">
+                <h1>Accueil</h1>
+            </div>
+            <div class="corps">
+                <div class="widget">
+                    <div class="wrapper">
+                        <div class="flex">
+                            <i class="fa-solid fa-temperature-half fa-2xl"></i>
+                            <i class="fa-solid fa-toggle-off"></i>
+                        </div>
+                        <div class="col" style="margin-top: 55px;">
+                            <span class="g">Température</span>
+                            <span>30°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="wrapper active">
+                        <div class="flex">
+                            <i class="fa-solid fa-lightbulb fa-2xl"></i>
+                            <i class="fa-solid fa-toggle-on"></i>
+                        </div>
+                        <div class="col" style="margin-top: 55px;">
+                            <span class="g">Lumière</span>
+                            <span>Salon, cuisine</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="wrapper active">
+                        <div class="flex">
+                            <i class="fa-solid fa-tv fa-2xl"></i>
+                            <i class="fa-solid fa-toggle-on"></i>
+                        </div>
+                        <div class="col" style="margin-top: 55px;">
+                            <span class="g">Smart TV</span>
+                            <span>Au salon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Docs des icones 
+        https://fontawesome.com/kits/789abbbfc8/use?welcome=yes
+        https://fontawesome.com/search?m=free
+    -->
+    <script src="https://kit.fontawesome.com/789abbbfc8.js" crossorigin="anonymous"></script>
+    <script src="js/ace/ace.js"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/dracula");
+        editor.session.setMode("ace/mode/json");
+        editor.on("change", function (e) {
+            try {
+                const ui = JSON.parse(editor.getValue())
+                updateScreen(ui)
+            } catch (e) {
+
+            }
+        });
+
+        function updateScreen(data) {
+            console.log(data);
+            el("#cadre").fond(data?.fond)
+            el(".titre h1").texte(data?.titre)
+        }
+
+        function el(seleteur) {
+            let element = document.querySelector(seleteur);
+            element.fond = function (couleur) {
+                element.style.backgroundColor = couleur
+            }
+            element.texte = function (t) {
+                element.textContent = t
+            }
+            return element;
+        }
+    </script>
+</body>
+
+</html>
