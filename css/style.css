@@ -88,7 +88,7 @@ h1 {
 }
 
 
-#cadre .titre {
+#cadre div.titre {
     text-align: center;
     text-transform: uppercase;
     font-size: 8pt;
@@ -123,6 +123,10 @@ h1 {
 
 #cadre .corps .widget .wrapper.active i {
     color: #0997c2;
+}
+
+.modele {
+    display: none;
 }
 
 .tar {
