@@ -49,7 +49,7 @@
                         modele.querySelector("div.wrapper").classList.remove("active");
                 } else {
                     const opt = modele.querySelector(`.${keys[i]}`);
-                    opt.textContent = w[keys[i]];
+                    if (opt) opt.textContent = w[keys[i]];
                 }
             }
             corps.ajouter(modele.innerHTML);
